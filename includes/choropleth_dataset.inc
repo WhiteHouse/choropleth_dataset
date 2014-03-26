@@ -175,7 +175,8 @@ function choropleth_dataset_set_settings($nid = '') {
 }
 
 /**
- * Checks if at least one resource in the dataset is set to show a choropleth.
+ * Checks if at least one resource in the dataset is set to show a choropleth
+ * map.
  *
  * @param object $node
  *   The dataset node object.
@@ -201,11 +202,12 @@ function choropleth_dataset_choroplethable($node = NULL) {
     // If resources exist, check for choropleth setting and set the flag = TRUE.
     if (!empty($resources)) {
       foreach ($resources as $resource) {
-        $field_upload = field_get_items('node', $resource, 'field_upload');
-        $field_upload = array_shift($field_upload);
-        if (!empty($field_upload['choropleth'])) {
-          // This resource has a choropleth display enabled.
-          $choroplethable = TRUE;
+        if ($field_upload = field_get_items('node', $resource, 'field_upload')) {
+          $field_upload = array_shift($field_upload);
+          if (!empty($field_upload['choropleth'])) {
+            // This resource has a choropleth display enabled.
+            $choroplethable = TRUE;
+          }
         }
       }
     }

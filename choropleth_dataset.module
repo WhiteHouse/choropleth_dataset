@@ -103,24 +103,25 @@ function choropleth_dataset_preprocess_node(&$vars) {
       // If we have resources, update settings.
       if (isset($resources)) {
         foreach ($resources as $resource) {
-          $field_upload = field_get_items('node', $resource, 'field_upload');
-          $field_upload = array_shift($field_upload);
-          if (($field_upload['choropleth']) || ($field_upload['map'])) {
-            ctools_include('choropleth', 'choropleth', '');
-            $choropleth_colors = choropleth_color_scale_settings();
-            $choropleth_colors_index = isset($field_upload['choropleth_color_scale']) ? (int) $field_upload['choropleth_color_scale'] : 0;
-            $map = isset($field_upload['map']) && $field_upload['map'] ? TRUE : FALSE;
-            $settings['choroplethDataset']['resources'][] = array(
-              'title' => $resource->title,
-              'file' => isset($field_upload['uri']) ? file_create_url($field_upload['uri']) : '',
-              'fileType' => isset($field_upload['filemime']) ? $field_upload['filemime'] : '',
-              'delimiter' => isset($field_upload['delimiter']) ? $field_upload['delimiter'] : ',',
-              'breakpoints' => isset($field_upload['choropleth_breakpoints']) ? $field_upload['choropleth_breakpoints'] : '',
-              'fieldToDisplay' => isset($field_upload['choropleth_data_column']) ? $field_upload['choropleth_data_column'] : '',
-              'baseColor' => $choropleth_colors[$choropleth_colors_index],
-              'map' => $map,
-              'loaded' => FALSE,
-            );
+          if ($field_upload = field_get_items('node', $resource, 'field_upload')) {
+            $field_upload = array_shift($field_upload);
+            if (($field_upload['choropleth']) || ($field_upload['map'])) {
+              ctools_include('choropleth', 'choropleth', '');
+              $choropleth_colors = choropleth_color_scale_settings();
+              $choropleth_colors_index = isset($field_upload['choropleth_color_scale']) ? (int) $field_upload['choropleth_color_scale'] : 0;
+              $map = isset($field_upload['map']) && $field_upload['map'] ? TRUE : FALSE;
+              $settings['choroplethDataset']['resources'][] = array(
+                'title' => $resource->title,
+                'file' => isset($field_upload['uri']) ? file_create_url($field_upload['uri']) : '',
+                'fileType' => isset($field_upload['filemime']) ? $field_upload['filemime'] : '',
+                'delimiter' => isset($field_upload['delimiter']) ? $field_upload['delimiter'] : ',',
+                'breakpoints' => isset($field_upload['choropleth_breakpoints']) ? $field_upload['choropleth_breakpoints'] : '',
+                'fieldToDisplay' => isset($field_upload['choropleth_data_column']) ? $field_upload['choropleth_data_column'] : '',
+                'baseColor' => $choropleth_colors[$choropleth_colors_index],
+                'map' => $map,
+                'loaded' => FALSE,
+              );
+            }
           }
         }
       }
