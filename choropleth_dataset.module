@@ -117,6 +117,7 @@ function choropleth_dataset_preprocess_node(&$vars) {
                 'delimiter' => isset($field_upload['delimiter']) ? $field_upload['delimiter'] : ',',
                 'breakpoints' => isset($field_upload['choropleth_breakpoints']) ? $field_upload['choropleth_breakpoints'] : '',
                 'fieldToDisplay' => isset($field_upload['choropleth_data_column']) ? $field_upload['choropleth_data_column'] : '',
+                'unitOfMeasure' => isset($field_upload['choropleth_unit_of_measure']) ? $field_upload['choropleth_unit_of_measure'] : '',
                 'baseColor' => $choropleth_colors[$choropleth_colors_index],
                 'map' => $map,
                 'loaded' => FALSE,
