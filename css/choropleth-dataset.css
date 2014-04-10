@@ -1,5 +1,5 @@
 #choropleth-dataset #resource-form{
-  margin-bottom: 18px;  
+  margin-bottom: 18px;
 }
 
 #choropleth-dataset #points-form {
@@ -37,3 +37,7 @@
   border: 1px solid #777;
 }
 
+.choropleth-map-links #privacy-policy {
+  float: right;
+  margin-right: 228px;
+}
