@@ -28,6 +28,7 @@ this.recline.View = this.recline.View || {};
             'selectable_fields': [options.resources[k].fieldToDisplay],
             'base_color': options.resources[k].baseColor,
             'breakpoints': options.resources[k].breakpoints ? options.resources[k].breakpoints : [],
+            'unit_of_measure': options.resources[k].unitOfMeasure ?  options.resources[k].unitOfMeasure : "",
           },
           options
         );
@@ -52,6 +53,7 @@ this.recline.View = this.recline.View || {};
           var state = this.state.toJSON();
           if (state['resources'][state['activeDataset']].dataset != this.model) {
             self.breakpoints = state['resources'][state['activeDataset']].breakpoints ? state['resources'][state['activeDataset']].breakpoints : [];
+            self.unit_of_measure =  state['resources'][state['activeDataset']].unitOfMeasure ?  state['resources'][state['activeDataset']].unitOfMeasure :'';
             self.model = state['resources'][state['activeDataset']].dataset;
             self.base_color = state['resources'][state['activeDataset']].baseColor;
             self._refreshFieldsMap();
@@ -262,6 +264,7 @@ this.recline.View = this.recline.View || {};
               </div> \
               <input type="hidden" class="editor-id" value="chroropleth-map-1" /> \
             </form> \
+            <label id="unit-of-measure"></label> \
             <div id="color-scale" class="reference"></div> \
     ',
     // Define here events for UI elements.
@@ -392,6 +395,7 @@ this.recline.View = this.recline.View || {};
           state['columnToDisplay'] = fieldToDisplay ? fieldToDisplay : selectable_columns[0];
           state['category'] = my.ChoroplethMap._grabOptionsForColumn(dataset.toTemplateJSON(), 'category', 'categories')[0];
           state['year'] = my.ChoroplethMap._grabOptionsForColumn(dataset.toTemplateJSON(), 'year', 'years')[0];
+
           self.state.set(state);
           $(document).trigger("choropleth-changed", ['resource', value]);
           return false;

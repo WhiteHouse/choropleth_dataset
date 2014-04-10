@@ -103,6 +103,7 @@ var state = [];
           oHash.values.category = view.state.get('category');
           oHash.values.year = view.state.get('year');
           oHash.values.columnToDisplay = view.state.get('columnToDisplay');
+
           // Cycle through point based checkboxes to get ids of any checked.
           //var checked = $('#points-form input[type="checkbox"]:checked').map(function(index,dom){return dom.id});
           var checkedString = '';
@@ -189,6 +190,8 @@ var state = [];
           var selectable_columns = view.menu._refreshSelectableColumns(resource_key);
           state['selectableColumns'] = columnToDisplay ? [columnToDisplay] : selectable_columns;
           state['columnToDisplay'] = columnToDisplay ? columnToDisplay : selectable_columns[0];
+
+
 
           view.menu.state.set(state);
           view.menu.render();
