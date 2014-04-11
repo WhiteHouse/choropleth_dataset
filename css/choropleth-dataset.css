@@ -14,6 +14,10 @@
   list-style: none;
 }
 
+.choropleth-shell{
+    padding-bottom:20px;
+}
+
 .resource-choropleth {
   position: relative;
   border-color: #DDD;
@@ -41,3 +45,6 @@
   float: right;
   margin-right: 228px;
 }
+
+
+

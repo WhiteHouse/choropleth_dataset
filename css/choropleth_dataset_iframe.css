@@ -5,3 +5,8 @@ body.iframe-choropleth,
     width: 100%;
     min-width:570px;
 }
+
+body.iframe-choropleth #page,
+body.iframe-choropleth{
+    background-color: transparent;
+}
