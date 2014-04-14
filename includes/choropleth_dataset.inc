@@ -162,7 +162,7 @@ function _choropleth_resource_node_load($nid = '') {
  *
  * @param int $nid
  *   The node id for a dataset node.
- * 
+ *
  * @return mixed
  *   - The node object if it is a dataset.
  *   - FALSE if it is not.
@@ -211,8 +211,7 @@ function choropleth_dataset_set_settings($nid = '') {
 }
 
 /**
- * Checks if at least one resource in the dataset is set to show a choropleth
- * map.
+ * See if at least one resource in the dataset is set to show a choropleth map.
  *
  * @param object $node
  *   The dataset node object.

@@ -26,7 +26,7 @@ function cholopleth_dataset_settings_form() {
     '#title' => t('Domain Settings'),
     '#markup' => t('<p>By default, map embed codes will reference the domain you are currently on. However, some teams use custom subdomains for workflow and permssions purposes, like <em>http://dev.example.com</em>, <em>http://stage.example.com</em>, and <em>http://edit.example.com</em>. In these cases, including the subdomain in embed codes could result in accidentally embedding maps that are not publically visible.</p>
       <p>To prevent this, you can specify your production domain below, and the embed codes will reference this domain regardless of the current environment.</p>'
-     ),
+    ),
   );
 
   $form['embed_settings']['choropleth_embed_domain'] = array(
