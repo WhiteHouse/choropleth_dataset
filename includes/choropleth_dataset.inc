@@ -45,6 +45,19 @@ function _choropleth_dataset_page_by_nid($nid = '') {
     // Generate the choropleth view.
     $node_view = node_view($node, $view_mode = 'choropleth');
     $map_view_html = drupal_render($node_view);
+
+    // Define the embedable url, based on config settings.
+    $embed_domain = variable_get('choropleth_embed_domain', FALSE);
+    if ($embed_domain != FALSE) {
+      $embed_url = url(variable_get('choropleth_embed_domain') . '/choropleth-map/' . $node->nid, array(
+        'absolute' => TRUE,
+        'external' => TRUE,
+      ));
+    }
+    else {
+      $embed_url = url('choropleth-map/' . $node->nid, array('absolute' => TRUE));
+    }
+
     $page_html = theme('choropleth-dataset-page', array(
       'node' => $node,
       'dataset_url' => url('node/' . $nid),
@@ -52,7 +65,7 @@ function _choropleth_dataset_page_by_nid($nid = '') {
       'choropleth' => theme('choropleth-dataset-map-wrapper', array(
         'node' => $node,
         'dataset_url' => url('node/' . $node->nid, array('absolute' => TRUE)),
-        'embedable_url' => url('choropleth-map/' . $node->nid, array('absolute' => TRUE)),
+        'embedable_url' => $embed_url,
         'choropleth' => theme('choropleth-dataset-map-view', array('node' => $node, 'map_view_html' => $map_view_html)),
         )),
     ));
@@ -86,13 +99,26 @@ function _choropleth_map_page_by_nid($nid = '') {
       'weight' => 900,
       'every_page' => FALSE,)
        );
+
+    // Define the embedable url, based on config settings.
+    $embed_domain = variable_get('choropleth_embed_domain', FALSE);
+    if ($embed_domain != FALSE) {
+      $embed_url = url(variable_get('choropleth_embed_domain') . '/choropleth-map/' . $node->nid, array(
+        'absolute' => TRUE,
+        'external' => TRUE,
+      ));
+    }
+    else {
+      $embed_url = url('choropleth-map/' . $node->nid, array('absolute' => TRUE));
+    }
+
     $page_html .= theme('choropleth-dataset-iframe', array(
       'node' => $node,
       'choroplethable' => choropleth_dataset_choroplethable($node),
       'choropleth' => theme('choropleth-dataset-map-wrapper', array(
         'node' => $node,
         'dataset_url' => url('node/' . $node->nid, array('absolute' => TRUE)),
-        'embedable_url' => url('choropleth-map/' . $node->nid, array('absolute' => TRUE)),
+        'embedable_url' => $embed_url,
         'choropleth' => theme('choropleth-dataset-map-view', array(
           'node' => $node,
           'map_view_html' => $map_view_html,
@@ -165,10 +191,20 @@ function _choropleth_dataset_node_load($nid = '') {
 function choropleth_dataset_set_settings($nid = '') {
   if (!empty($nid) && (ctype_digit(strval($nid)))) {
     global $_choropleth_dataset_iframe_path_slug;
+
+    // Define the embedable url, based on config settings.
+    $embed_domain = variable_get('choropleth_embed_domain', FALSE);
+    if ($embed_domain != FALSE) {
+      $embed_url = url(variable_get('choropleth_embed_domain') . '/' . $_choropleth_dataset_iframe_path_slug . '/' . $nid, array('absolute' => TRUE, 'external' => TRUE));
+    }
+    else {
+      $embed_url = url($_choropleth_dataset_iframe_path_slug . '/' . $nid, array('absolute' => TRUE));
+    }
+
     drupal_add_js(array(
         'choropleth_dataset' => array(
           'nid' => $nid,
-          'embedable_url' => url($_choropleth_dataset_iframe_path_slug . '/' . $nid, array('absolute' => TRUE)),
+          'embedable_url' => $embed_url,
           'dataset_url' => url("node/$nid", array('absolute' => TRUE)),
         )), 'setting');
   }

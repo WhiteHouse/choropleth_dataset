@@ -45,6 +45,15 @@ function choropleth_dataset_menu() {
     'file' => 'includes/choropleth_dataset.inc',
   );
 
+  // Create an admin page for defining an optional url root for embeds.
+  $items['admin/config/choropleth_dataset'] = array(
+    'title' => 'Choropleth Dataset Configuration',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('cholopleth_dataset_settings_form'),
+    'access arguments' => array('configure choropleth dataset'),
+    'file' => 'choropleth_dataset.admin.inc',
+  );
+
   return $items;
 }
 
@@ -151,6 +160,10 @@ function choropleth_dataset_permission() {
     'view choropleth displays' => array(
       'title' => t('View choropleth renderings'),
       'description' => t('Allows user to see choropleth displays.'),
+    ),
+    'configure choropleth dataset' => array(
+      'title' => t('Configure choropleth dataset settings'),
+      'description' => t('Grants access to cholopleth dataset configuration settings.'),
     ),
   );
 }
