@@ -51,7 +51,7 @@ function choropleth_dataset_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('cholopleth_dataset_settings_form'),
     'access arguments' => array('configure choropleth dataset'),
-    'file' => 'choropleth_dataset.admin.inc',
+    'file' => 'includes/choropleth_dataset.admin.inc',
   );
 
   return $items;
@@ -204,9 +204,9 @@ function choropleth_dataset_theme($existing, $type, $theme, $path) {
         'dataset_url' => NULL,
         'embedable_url' => NULL,
         'choropleth' => NULL,
-        'privacy_policy_url' => url("http://www.whitehouse.gov/privacy"),
-        'privacy_policy_url_text' => t('Privacy Policy'),
-        'privacy_policy_url_title_text' => t('Whitehouse.gov Privacy Policy'),
+        'privacy_policy_url' => NULL,
+        'privacy_policy_url_text' => NULL,
+        'privacy_policy_url_title_text' => NULL,
       ),
       'template' => 'choropleth-dataset-map-wrapper',
       'path' => drupal_get_path('module', 'choropleth_dataset') . '/templates/',
