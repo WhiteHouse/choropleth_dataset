@@ -24,7 +24,8 @@
   <?php print $choropleth; ?>
 </div>
 <div class="choropleth-map-links">
-  <div>source: <a href="<?php print $dataset_url; ?>" target="_blank" title="<?php print $link_source_title; ?> <?php print $dataset_url; ?>"><?php print $dataset_url; ?></a></div>
+  <!-- TO-DO: Make the display of the source URL something that can be toggled. -->
+  <!-- <div>source: <a href="<?php print $dataset_url; ?>" target="_blank" title="<?php print $link_source_title; ?> <?php print $dataset_url; ?>"><?php print $dataset_url; ?></a></div> -->
   <div>
     <a id="embed-toggle"><?php print $embed_toggle_text; ?></a>
     <a id="privacy-policy" href="<?php print $privacy_policy_url; ?>" target="blank" title="<?php print $privacy_policy_url_title_text; ?>"><?php print $privacy_policy_url_text; ?></a>
