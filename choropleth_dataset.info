@@ -1,6 +1,7 @@
 name = Choropleth Dataset
 description = Creates the choropleth view mode.
 core = 7.x
+configure = admin/config/choropleth_dataset
 package = DKAN
 php = 5.2.4
 

@@ -151,7 +151,6 @@ var state = [];
               }
             }
             state['activeDataset'] = resource_key;
-            
           }
 
           if (!!oHash.values.year) {
@@ -175,10 +174,10 @@ var state = [];
         }
         return true;
       };
-      
+
       /**
        * Reads the hash and sets the controls to the values of the hash.
-       * 
+       *
        * @returns {Boolean}
        */
       oHash.matchHash = function() {
@@ -224,7 +223,7 @@ var state = [];
 
 
       //////////// BINDS /////////////////////////////////
-      
+
       // Bind to watch for actual changes to the URL hash.
       $(window).bind('hashchange', function(e) {
         // Determine if it was from a control interaction or history change.
