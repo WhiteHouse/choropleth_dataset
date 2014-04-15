@@ -51,7 +51,7 @@ function choropleth_dataset_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('cholopleth_dataset_settings_form'),
     'access arguments' => array('configure choropleth dataset'),
-    'file' => 'choropleth_dataset.admin.inc',
+    'file' => 'includes/choropleth_dataset.admin.inc',
   );
 
   return $items;
