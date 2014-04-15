@@ -47,31 +47,30 @@ function cholopleth_dataset_settings_form() {
     '#markup' => t('The following fields allow you to add a privacy policy link to all map node embeds.  Fill out all three form fields to properly configure the privacy policy link.'
     ),
   );
-  $form['embed_settings']['privacy_policy_link']['privacy_url'] = array(
+  $form['embed_settings']['privacy_policy_link']['choropleth_privacy_url'] = array(
     '#type' => 'textfield',
     '#title' => t('Privacy Policy URL'),
     '#size' => 60,
-    '#default_value' => variable_get('choropleth_privacy_privacy_url', ''),
+    '#default_value' => variable_get('choropleth_privacy_url', ''),
     '#description' => t('Enter the absolute URL of your privacy policy. Example: "http://www.example.com/privacy."'
     ),
   );
-  $form['embed_settings']['privacy_policy_link']['privacy_url_text'] = array(
+  $form['embed_settings']['privacy_policy_link']['choropleth_privacy_url_text'] = array(
     '#type' => 'textfield',
     '#title' => t('Privacy Policy URL Text'),
     '#size' => 60,
-    '#default_value' => variable_get('choropleth_privacy_privacy_url_text', ''),
+    '#default_value' => variable_get('choropleth_privacy_url_text', ''),
     '#description' => t('Enter the display text of your URL link. Example: "Privacy Policy".'
     ),
   );
-  $form['embed_settings']['privacy_policy_link']['privacy_url_title_text'] = array(
+  $form['embed_settings']['privacy_policy_link']['choropleth_privacy_url_title_text'] = array(
     '#type' => 'textfield',
     '#title' => t('Privacy Policy URL Title Text'),
     '#size' => 60,
-    '#default_value' => variable_get('choropleth_privacy_privacy_url_title_text', ''),
+    '#default_value' => variable_get('choropleth_privacy_url_title_text', ''),
     '#description' => t('For accessibility, enter the title text of your URL. This may differ from your link text. Example: "Example.com Privacy Policy page."'
     ),
   );
-
 
   return system_settings_form($form);
 }

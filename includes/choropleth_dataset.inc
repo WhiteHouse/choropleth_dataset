@@ -67,6 +67,9 @@ function _choropleth_dataset_page_by_nid($nid = '') {
         'dataset_url' => url('node/' . $node->nid, array('absolute' => TRUE)),
         'embedable_url' => $embed_url,
         'choropleth' => theme('choropleth-dataset-map-view', array('node' => $node, 'map_view_html' => $map_view_html)),
+        'privacy_policy_url' => url(variable_get('choropleth_privacy_url', '')),
+        'privacy_policy_url_text' => t(variable_get('choropleth_privacy_url_text', '')),
+        'privacy_policy_url_title_text' => t(variable_get('choropleth_privacy_url_title_text', '')),
         )),
     ));
     return $page_html;
@@ -123,6 +126,9 @@ function _choropleth_map_page_by_nid($nid = '') {
           'node' => $node,
           'map_view_html' => $map_view_html,
           )),
+        'privacy_policy_url' => url(variable_get('choropleth_privacy_url', '')),
+        'privacy_policy_url_text' => t(variable_get('choropleth_privacy_url_text', '')),
+        'privacy_policy_url_title_text' => t(variable_get('choropleth_privacy_url_title_text', '')),
         )),
       ));
     return $page_html;
