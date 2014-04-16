@@ -31,7 +31,7 @@ function choropleth_dataset_menu() {
     'title' => 'Choropleth map iframe by dataset nid',
     'page callback' => '_choropleth_map_page_by_nid',
     'page arguments' => array(1),
-    'access arguments' => array(TRUE),
+    'access arguments' => array('view choropleth displays'),
     'file' => 'includes/choropleth_dataset.inc',
   );
 
