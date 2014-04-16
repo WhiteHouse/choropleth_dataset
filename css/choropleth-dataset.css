@@ -53,3 +53,8 @@ body.iframe-choropleth #block-system-main {
   -moz-box-shadow: none;
   box-shadow: none;
 }
+
+.recline-data-explorer .data-view-sidebar {
+  min-height: 520px;
+}
+
