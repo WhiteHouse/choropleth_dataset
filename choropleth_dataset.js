@@ -22,7 +22,7 @@ var state = [];
           var breakpoints = resources[i].breakpoints.split(',');
           var items = [];
           for (var k = 0; k < breakpoints.length; k++) {
-            items[k] = parseInt(breakpoints[k], 10);
+            items[k] = breakpoints[k];
           }
           resources[i].breakpoints = items;
         }
