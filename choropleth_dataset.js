@@ -9,9 +9,9 @@ var state = [];
       var pointLabel = Drupal.settings.choroplethDataset.pointLabel;
       var location_default = [];
       // Set to contiguous USA.
-      location_default.lat = 37.8;
-      location_default.lon = -96;
-      location_default.zoom = 4;
+      location_default.lat = 51.25;
+      location_default.lon = -110;
+      location_default.zoom = 3;
       var oHash = {values:{resource:'', year:'', category:'', checkedPoints:''}};
       var view;
       var dataset;
