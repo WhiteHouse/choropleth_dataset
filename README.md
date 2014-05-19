@@ -23,8 +23,10 @@ Live examples:
  - http://maproom.whitehouse.gov/choropleth-map/86
  - http://maproom.whitehouse.gov/choropleth-map/146
 
-The choropleth_dataset module was built to work with the DKAN distribution
-https://drupal.org/project/dkan and extend the DKAN Dataset module.
+The choropleth_dataset module was built to work with the [DKAN
+distribution](https://drupal.org/project/dkan) and extend the [DKAN Dataset
+](https://drupal.org/project/dkan_dataset) and [Choropleth
+](https://drupal.org/project/choropleth) modules.
 
 
 REQUIREMENTS
