@@ -1,5 +1,3 @@
-Module: choropleth_dataset
-
 CONTENTS OF THIS FILE
 ---------------------
  * Introduction
@@ -10,15 +8,24 @@ CONTENTS OF THIS FILE
  * FAQ
  * Future Improvements
 
+
 INTRODUCTION
 ------------
-The choropleth_dataset module adds the possibility for choropleth maps (region
-based data) and point based maps to be displayed off of the DKAN dataset node.
-It also provides an iframeable view path so that maps can be embedded on other
+
+Visualize different DKAN "resources" included in the same "dataset" on the same interactive map.
+
+Choropleth Dataset also enables you to overlaying point-based maps on top of
+choropleth maps, and provides an iframeable view path so that maps can be embedded on other
 websites.
+
+Live examples: 
+ - http://www.whitehouse.gov/raise-the-wage
+ - http://maproom.whitehouse.gov/choropleth-map/86
+ - http://maproom.whitehouse.gov/choropleth-map/146
 
 The choropleth_dataset module was built to work with the DKAN distribution
 https://drupal.org/project/dkan and extend the DKAN Dataset module.
+
 
 REQUIREMENTS
 ------------
@@ -27,7 +34,6 @@ This module requires the following modules:
  * DKAN Dataset (https://drupal.org/project/dkan_dataset)
  * Recline (https://drupal.org/project/recline)
  * Choropleth (https://drupal.org/project/choropleth)
-
 
 
 INSTALLATION
@@ -40,12 +46,13 @@ INSTALLATION
 CONFIGURATION
 -------------
  * Configure user permissions in Administration » People » Permissions:
-  - View choropleth renderings must be granted to any role that should be able
-    to see the choropleth map for a dataset.
-  - Any resource that has data for a map should have the Recline View of
-    States Map or Map enabled.  If any of the resources in a dataset have this
-    enabled, then a link to the choropleth view will appear when viewing the
-    dataset node.
+ * View choropleth renderings must be granted to any role that should be able
+   to see the choropleth map for a dataset.
+ * Any resource that has data for a map should have the Recline View of
+   States Map or Map enabled.  If any of the resources in a dataset have this
+   enabled, then a link to the choropleth view will appear when viewing the
+   dataset node.
+
 
 TROUBLESHOOTING
 ---------------
@@ -57,11 +64,6 @@ TROUBLESHOOTING
    sure that at least one of the resources in the dataset is set to have  a
    a Recline view of State Map or Map.
 
-
-FAQ
----
-Q:
-A:
 
 FUTURE IMPROVEMENTS
 -------------------
