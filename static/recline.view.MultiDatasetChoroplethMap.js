@@ -53,6 +53,7 @@ this.recline.View = this.recline.View || {};
           var state = this.state.toJSON();
           if (state['resources'][state['activeDataset']].dataset != this.model) {
             self.breakpoints = state['resources'][state['activeDataset']].breakpoints ? state['resources'][state['activeDataset']].breakpoints : [];
+
             self.unit_of_measure =  state['resources'][state['activeDataset']].unitOfMeasure ?  state['resources'][state['activeDataset']].unitOfMeasure :'';
             self.model = state['resources'][state['activeDataset']].dataset;
             self.base_color = state['resources'][state['activeDataset']].baseColor;
@@ -492,6 +493,7 @@ this.recline.View = this.recline.View || {};
      */
     _setSelectedResourceCheckBox: function() {
       var self = this;
+      var state = this.state.toJSON();
       // Set all the checkboxes for pointbased data to match the current state
       var active_points = state['activePoints'];
       //  Setting controls directly  - CLUNKY - Needs a more solid internal method.
