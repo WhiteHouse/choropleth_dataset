@@ -12,7 +12,7 @@
  *
  * @ingroup forms
  */
-function cholopleth_dataset_settings_form() {
+function choropleth_dataset_settings_form() {
   $form = array();
 
   $form['embed_settings'] = array(

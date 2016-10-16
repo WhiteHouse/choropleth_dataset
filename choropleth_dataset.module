@@ -49,7 +49,7 @@ function choropleth_dataset_menu() {
   $items['admin/config/choropleth_dataset'] = array(
     'title' => 'Choropleth Dataset Configuration',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('cholopleth_dataset_settings_form'),
+    'page arguments' => array('choropleth_dataset_settings_form'),
     'access arguments' => array('configure choropleth dataset'),
     'file' => 'includes/choropleth_dataset.admin.inc',
   );
@@ -164,7 +164,7 @@ function choropleth_dataset_permission() {
     ),
     'configure choropleth dataset' => array(
       'title' => t('Configure choropleth dataset settings'),
-      'description' => t('Grants access to cholopleth dataset configuration settings.'),
+      'description' => t('Grants access to choropleth dataset configuration settings.'),
     ),
   );
 }
