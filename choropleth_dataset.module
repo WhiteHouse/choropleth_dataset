@@ -245,7 +245,7 @@ function choropleth_dataset_process_page(&$variables) {
   global $_choropleth_dataset_iframe_path_slug;
   $current_path_slug = arg(0, current_path());
   if ($_choropleth_dataset_iframe_path_slug === $current_path_slug) {
-    // It is an iframe, so clear out unecessary trimmings.
+    // It is an iframe, so clear out unnecessary trimmings.
     unset($variables['breadcrumb']);
     unset($variables['page']['header']);
     unset($variables['page']['footer']);
@@ -262,7 +262,7 @@ function choropleth_dataset_preprocess_html(&$variables) {
   global $_choropleth_dataset_iframe_path_slug;
   $current_path_slug = arg(0, current_path());
   if ($_choropleth_dataset_iframe_path_slug === $current_path_slug) {
-    // It is an iframe, so clear out unecessary trimmings.
+    // It is an iframe, so clear out unnecessary trimmings.
     unset($variables['page']['header']);
     unset($variables['page']['footer']);
     unset($variables['page']['page_bottom']);
