@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Template for the chororpleth map view.
+ * Template for the choropleth map view.
  *
  * Variables passed in from theme function:
  *   - $map_view_html = The base html for the map

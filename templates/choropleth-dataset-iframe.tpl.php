@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Template for the chororpleth map wrapper.
+ * Template for the choropleth map wrapper.
  *
  * Variables passed in from theme function:
  *  - $node - The fully loaded dataset node object.

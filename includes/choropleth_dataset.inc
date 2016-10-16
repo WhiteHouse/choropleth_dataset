@@ -80,7 +80,7 @@ function _choropleth_dataset_page_by_nid($nid = '') {
 }
 
 /**
- * Page callback to render the chorpleth iframeable view from a dataset node id.
+ * Page callback to render the choropleth iframeable view from a dataset node id.
  *
  * @param int $nid
  *   The node id for a dataset node.

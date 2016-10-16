@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Template for the node__dataset__chororpleth.
+ * Template for the node__dataset__choropleth.
  *
  * Variables passed from theme function:
  *   - NONE

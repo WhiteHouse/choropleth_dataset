@@ -262,7 +262,7 @@ this.recline.View = this.recline.View || {};
               <div id="points-form" class="clearfix"> \
                 {{{filter_by_points}}} \
               </div> \
-              <input type="hidden" class="editor-id" value="chroropleth-map-1" /> \
+              <input type="hidden" class="editor-id" value="choropleth-map-1" /> \
             </form> \
             <label id="unit-of-measure"></label> \
             <div id="color-scale" class="reference"></div> \
